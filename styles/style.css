@@ -1,6 +1,5 @@
-p {
+p, li, h2 {
 	color: red;
-}
-li{
-	color: blue;
+	width: 500px;
+	border: 1px solid black;
 }
