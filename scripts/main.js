@@ -5,6 +5,6 @@ myImage.onclick = function() {
     if(mySrc === 'images/test-meme.png') {
       myImage.setAttribute ('src','images/ben.jpg');
     } else {
-      myImage.setAttribute ('src','images/ben.jpg');
+      myImage.setAttribute ('src','images/test-meme.jpg');
     }
 }
