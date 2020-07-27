@@ -1,5 +1,9 @@
 let myButton = document.querySelector('button');
 let myHeading = document.querySelector('h1');
+
+myButton.onclick = function() {
+  setUserName();
+}
 function setUserName() {
   let myName = prompt('Please enter your name.');
   localStorage.setItem('name', myName);
@@ -10,7 +14,4 @@ if(!localStorage.getItem('name')) {
 } else {
   let storedName = localStorage.getItem('name');
   myHeading.textContent = 'Mozilla is cool, ' + storedName;
-}
-myButton.onclick = function() {
-  setUserName();
 }
