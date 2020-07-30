@@ -5,12 +5,11 @@
     <title>Shopping list example</title>
     <style>
       li {
-        font-size: 10px;
         margin-bottom: 10px;
       }
 
       li button {
-        font-size: 16px;
+        font-size: 8px;
         margin-left: 20px;
         color: #666;
       }
@@ -35,27 +34,26 @@
       const input = document.querySelector('input');
       const button = document.querySelector('button');
 
-      button.onclick = function(){
-        let current_val = input.value;
+      button.onclick = function() {
+        let myItem = input.value;
         input.value = '';
 
         const listItem = document.createElement('li');
-        const spanItem = document.createElement('span');
-        const buttonItem = document.createElement('button');
-        listItem.appendChild(spanItem);
-        listItem.textContext = current_val;
-        listItem.appendChild(buttonItem);
-        buttonItem.textContext = 'Delete';
+        const listText = document.createElement('span');
+        const listBtn = document.createElement('button');
 
+        listItem.appendChild(listText);
+        listText.textContent = myItem;
+        listItem.appendChild(listBtn);
+        listBtn.textContent = 'Delete';
         list.appendChild(listItem);
 
-        buttonItem.onclick = function(e){
+        listBtn.onclick = function(e) {
           list.removeChild(listItem);
         }
+
         input.focus();
       }
-
-
     </script>
   </body>
 </html>
