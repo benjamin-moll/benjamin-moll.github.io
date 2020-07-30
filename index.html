@@ -34,7 +34,7 @@
       const input = document.querySelector('input');
       const button = document.querySelector('button');
 
-      button.onClick() = function(){
+      button.onclick() = function(){
         let current_val = input.value;
         input.value = '';
 
@@ -48,7 +48,7 @@
 
         list.appendChild(listItem);
 
-        buttonItem.onClick = function(e){
+        buttonItem.onclick = function(e){
           list.removeChild(listItem);
         }
         input.focus();
