@@ -1,36 +1,5 @@
-Skip to content
-Search or jump to…
-
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@benjamin-moll 
-mdn
-/
-learning-area
-259
-3k9.9k
-Code
-Issues
-1
-Pull requests
-1
-Actions
-Projects
-Security
-Insights
-learning-area/javascript/apis/fetching-data/ajax-start.html
-@chrisdavidmills
-chrisdavidmills updating link to html5shiv with up to date one that does not 404
-Latest commit 776deac on Sep 26, 2018
- History
- 1 contributor
-67 lines (53 sloc)  1.26 KB
-  
-<!DOCTYPE html>
-<html>
+  <!DOCTYPE html>
+  <html>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -92,8 +61,35 @@ Latest commit 776deac on Sep 26, 2018
     </pre>
 
     <script>
+      const verseChoose = document.querySelector('select');
+      const poemDisplay = document.querySelector('pre');
 
+      verseChoose.onchange = function() {
+        const verse = verseChoose.value;
+        updateDisplay(verse);
+      };
+
+      function updateDisplay(verse){
+        verse = verse.replace(" ", "");
+        verse = verse.toLowerCase();
+        let url = verse + '.txt';
+
+        let request = new XMLHttpRequest();
+
+        request.open('GET', url);
+
+        request.responseType = 'text';
+        request.onload = function() {
+          poemDisplay.textContent = request.response;
+        };
+
+
+        request.send();
+
+        updateDisplay('Verse 1');
+        verseChoose.value = 'Verse 1';
+      }
     </script>
   </body>
-</html>
+  </html>
 
