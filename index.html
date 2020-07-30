@@ -30,6 +30,30 @@
     </ul>
 
     <script>
+      const list = document.querySelector('ul');
+      const input = document.querySelector('input');
+      const button = document.querySelector('button');
+
+      button.onClick() = function(){
+        let current_val = input.value;
+        input.value = '';
+
+        const listItem = document.createElement('li');
+        const spanItem = document.createElement('span');
+        const buttonItem = document.createElement('button');
+        listItem.appendChild(spanItem);
+        spanItem.textContext = current_val;
+        listItem.appendChild(buttonItem);
+        buttonItem.textContext = 'Delete';
+
+        list.appendChild(listItem);
+
+        buttonItem.onClick = function(e){
+          list.removeChild(listItem);
+        }
+        input.focus();
+      }
+
 
     </script>
   </body>
