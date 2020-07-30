@@ -1,59 +1,99 @@
+Skip to content
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@benjamin-moll 
+mdn
+/
+learning-area
+259
+3k9.9k
+Code
+Issues
+1
+Pull requests
+1
+Actions
+Projects
+Security
+Insights
+learning-area/javascript/apis/fetching-data/ajax-start.html
+@chrisdavidmills
+chrisdavidmills updating link to html5shiv with up to date one that does not 404
+Latest commit 776deac on Sep 26, 2018
+ History
+ 1 contributor
+67 lines (53 sloc)  1.26 KB
+  
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Shopping list example</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+
+    <title>Ajax starting point</title>
+
     <style>
-      li {
-        margin-bottom: 10px;
+      html, pre {
+        font-family: sans-serif;
       }
 
-      li button {
-        font-size: 8px;
-        margin-left: 20px;
-        color: #666;
+      body {
+        width: 500px;
+        margin: 0 auto;
+        background-color: #ccc;
       }
+
+      pre {
+        line-height: 1.5;
+        letter-spacing: 0.05rem;
+        padding: 1rem;
+        background-color: white;
+      }
+
+      label {
+        width: 200px;
+        margin-right: 33px;
+      }
+
+      select {
+        width: 350px;
+        padding: 5px;
+      }
+
     </style>
+    <!--[if lt IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+    <![endif]-->
   </head>
+
   <body>
+    <h1>Ajax starting point</h1>
 
-    <h1>My shopping list</h1>
+    <form>
+      <label for="verse-choose">Choose a verse</label>
+      <select id="verse-choose" name="verse-choose">
+        <option>Verse 1</option>
+        <option>Verse 2</option>
+        <option>Verse 3</option>
+        <option>Verse 4</option>
+      </select>
+    </form>
 
-    <div>
-      <label for="item">Enter a new item:</label>
-      <input type="text" name="item" id="item">
-      <button>Add item</button>
-    </div>
+    <h2>The Conqueror Worm, <em>Edgar Allen Poe, 1843</em></h2>
 
-    <ul>
+    <pre>
 
-    </ul>
+    </pre>
 
     <script>
-      const list = document.querySelector('ul');
-      const input = document.querySelector('input');
-      const button = document.querySelector('button');
 
-      button.onclick = function() {
-        let myItem = input.value;
-        input.value = '';
-
-        const listItem = document.createElement('li');
-        const listText = document.createElement('span');
-        const listBtn = document.createElement('button');
-
-        listItem.appendChild(listText);
-        listText.textContent = myItem;
-        listItem.appendChild(listBtn);
-        listBtn.textContent = 'Delete';
-        list.appendChild(listItem);
-
-        listBtn.onclick = function(e) {
-          list.removeChild(listItem);
-        }
-
-        input.focus();
-      }
     </script>
   </body>
 </html>
+
